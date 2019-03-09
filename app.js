@@ -92,7 +92,7 @@ app.post("/blogs", (req, res) => {
 });
 
 //SHOW Route
-app.get("/blogs/:id", function (req, res) {
+app.get("/blogs/:id", (req, res) => {
     Blog.findById(req.params.id, (err, foundBlog) => {
         if (err) {
             res.redirect("/blogs");
