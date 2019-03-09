@@ -5,13 +5,12 @@ const expressSanitizer = require("express-sanitizer");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const localStrategy = require("passport-local");
-const pasportLocalMongoose = require("passport-local-mongoose");
 const User = require("./models/user");
-
 const app = express();
 
-// APP CONFIG
-mongoose.connect("mongodb://localhost:27017/restful_blog_app", {
+//MONGO CLOUD CONNECTION
+
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true
 });
 
@@ -196,6 +195,8 @@ app.post("/register", (req, res) => {
     );
 });
 
-app.listen(5000, () => {
-    console.log("Blog App server running!");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+    console.log(`Blog App server running on port ${PORT}`);
 });

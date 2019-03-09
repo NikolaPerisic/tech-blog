@@ -14,10 +14,9 @@
 
 <body>
     <div class="ui inverted fixed menu">
-        <div class="header item">
+        <a href='/' class='item'>
             <i class="keyboard icon"></i>Blog Site
-        </div>
-        <a href="/" class="item">Home</a>
+        </a>
         <a href="/blogs/new" class="item">New Post</a>
         <div class="right menu">
             <% if(isAuthenticated){ %>
@@ -28,20 +27,3 @@
             <% } %>
         </div>
     </div>
-    <!-- <div class="ui fixed inverted menu">
-        <div class="ui container">
-            <div class="header item">
-                <i class="keyboard icon"></i>Blog Site
-            </div>
-            <a href="/" class="item">Home</a>
-            <a href="/blogs/new" class="item">New Post</a>
-        </div>
-        <div class="ui container">
-            <% if(isAuthenticated){ %>
-            <a href="/logout" class="item floated right">Logout</a>
-            <% } else { %>
-            <a href="/register" class="item floated right">Sign Up</a>
-            <a href="/login" class="item">Login</a>
-            <% } %>
-        </div>
-    </div> -->
